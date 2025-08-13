@@ -1,1 +1,0 @@
--keep,allowobfuscation,allowshrinking class com.fruitflvme.feature_account.AccountViewModel

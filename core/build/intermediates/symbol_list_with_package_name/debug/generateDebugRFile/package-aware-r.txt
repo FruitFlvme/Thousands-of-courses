@@ -1,6 +1,0 @@
-com.fruitflvme.core
-drawable a
-drawable b
-drawable c
-drawable d
-drawable e
