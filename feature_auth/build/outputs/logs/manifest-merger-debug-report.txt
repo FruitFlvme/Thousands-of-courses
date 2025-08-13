@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml:2:13-83
+INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml:2:13-83
+	package
+		INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml
+	xmlns:android
+		ADDED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml:2:23-81
+uses-sdk
+INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml reason: use-sdk injection requested
+INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml
+INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml
+	android:targetSdkVersion
+		INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml
+	android:minSdkVersion
+		INJECTED from /home/trufanov/All/projectsTest/Thousands-of-courses/feature_auth/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest18328086127825844507.xml

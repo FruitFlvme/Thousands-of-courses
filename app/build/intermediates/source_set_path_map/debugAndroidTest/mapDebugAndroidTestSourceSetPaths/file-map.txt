@@ -1,0 +1,4 @@
+com.fruitflvme.thousandsofcourses.test.app-androidTest-0 /home/trufanov/All/projectsTest/android/ThousandsOfCourses/app/build/generated/res/resValues/androidTest/debug
+com.fruitflvme.thousandsofcourses.test.app-mergeDebugAndroidTestResources-1 /home/trufanov/All/projectsTest/android/ThousandsOfCourses/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.fruitflvme.thousandsofcourses.test.app-mergeDebugAndroidTestResources-2 /home/trufanov/All/projectsTest/android/ThousandsOfCourses/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.fruitflvme.thousandsofcourses.test.app-debugAndroidTest-3 /home/trufanov/All/projectsTest/android/ThousandsOfCourses/app/build/intermediates/merged_res/debugAndroidTest/mergeDebugAndroidTestResources

@@ -1,0 +1,1 @@
+-keep,allowobfuscation,allowshrinking class com.fruitflvme.feature_main.main.MainViewModel

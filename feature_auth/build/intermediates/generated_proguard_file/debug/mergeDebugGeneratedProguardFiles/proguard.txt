@@ -1,0 +1,2 @@
+-keep,allowobfuscation,allowshrinking class com.fruitflvme.feature_auth.AuthViewModel
+-keep,allowobfuscation,allowshrinking class com.fruitflvme.feature_auth.AuthViewModel
