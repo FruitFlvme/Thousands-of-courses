@@ -15,6 +15,7 @@ import com.fruitflvme.feature_auth.AuthScreen
 import com.fruitflvme.feature_favorites.FavoritesScreen
 import com.fruitflvme.feature_main.course.CourseDetailScreenWrapper
 import com.fruitflvme.feature_main.main.MainScreen
+import com.fruitflvme.feature_main.main.MainViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -24,7 +25,8 @@ fun NavGraph(
     paddingValues: PaddingValues,
     isUserLoggedIn: Boolean,
     userPreferences: UserPreferences,
-    coroutineScope: CoroutineScope
+    coroutineScope: CoroutineScope,
+    mainViewModel: MainViewModel
 ) {
     val startDestination = if (isUserLoggedIn) Screen.Main.route else Screen.Auth.route
 
@@ -58,7 +60,7 @@ fun NavGraph(
 
 
         composable(Screen.Main.route) {
-            MainScreen(navController = navController)
+            MainScreen(navController = navController, viewModel = mainViewModel)
         }
 
         composable(Screen.Favorites.route) {

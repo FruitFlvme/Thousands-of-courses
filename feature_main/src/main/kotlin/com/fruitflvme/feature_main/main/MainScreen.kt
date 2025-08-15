@@ -23,6 +23,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
@@ -32,19 +33,20 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.fruitflvme.core.datastore.rememberUserPreferences
 import com.fruitflvme.core.icons.IconsPack
 import com.fruitflvme.core.icons.iconspack.ArrowDownUp
 import com.fruitflvme.core.icons.iconspack.Funnel
 import com.fruitflvme.core.icons.iconspack.Search
 import com.fruitflvme.feature_main.course.CourseCard
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @Composable
 fun MainScreen(
     navController: NavController,
-    viewModel: MainViewModel = hiltViewModel()
+    viewModel: MainViewModel
 ) {
     val search by viewModel.search.collectAsState()
     val isSortActive by viewModel.isSortActive.collectAsState(initial = false)
@@ -52,6 +54,16 @@ fun MainScreen(
 
     val lazyListState = rememberLazyListState()
     val scope = rememberCoroutineScope()
+
+    val isUserLoggedIn by rememberUserPreferences().isLoggedInFlow.collectAsState(initial = false)
+
+    LaunchedEffect(isUserLoggedIn) {
+        if (isUserLoggedIn) {
+            println(">>> User is logged in, loading courses...")
+            delay(300)
+            viewModel.loadCourses()
+        }
+    }
 
     Column(
         modifier = Modifier
@@ -154,6 +166,8 @@ fun MainScreen(
                 }
             }
         }
+
+        println(">>> UI observes courses: ${courses.size}")
 
         LazyColumn(
             state = lazyListState,

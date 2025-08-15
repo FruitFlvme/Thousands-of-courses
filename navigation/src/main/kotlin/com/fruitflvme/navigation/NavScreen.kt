@@ -13,9 +13,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.fruitflvme.core.datastore.rememberUserPreferences
+import com.fruitflvme.feature_main.main.MainViewModel
 
 @Composable
 fun NavScreen() {
@@ -27,6 +29,8 @@ fun NavScreen() {
 
     var isUserLoggedIn by remember { mutableStateOf<Boolean?>(null) }
     val scope = rememberCoroutineScope()
+
+    val mainViewModel: MainViewModel = hiltViewModel()
 
     val isBottomVisible = when {
         currentRoute == null -> true
@@ -59,7 +63,8 @@ fun NavScreen() {
             paddingValues = paddingValues,
             isUserLoggedIn = isUserLoggedIn!!,
             userPreferences = userPreferences,
-            coroutineScope = scope
+            coroutineScope = scope,
+            mainViewModel = mainViewModel
         )
     }
 }

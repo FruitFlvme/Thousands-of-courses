@@ -15,6 +15,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import java.net.SocketTimeoutException
 import javax.inject.Inject
 
 @HiltViewModel
@@ -36,17 +37,29 @@ class MainViewModel @Inject constructor(
     val search: StateFlow<String> = _search
 
     init {
+        println(">>> MainViewModel init")
+    }
+
+    fun loadCourses() {
+        println(">>> loadCourses called")
         viewModelScope.launch {
-            val coursesList = getCoursesUseCase()
+            try {
+                println(">>> Calling getCoursesUseCase...")
+                val coursesList = getCoursesUseCase()
+                println(">>> getCoursesUseCase returned ${coursesList.size} items")
+                coursesList.filter { it.hasLike }.map { course ->
+                    async { addFavoriteCourseUseCase(course) }
+                }.awaitAll()
+                _courses.value = coursesList
+                originalCourses.clear()
+                originalCourses.addAll(coursesList)
 
-            coursesList.filter { it.hasLike }.map { course ->
-                async { addFavoriteCourseUseCase(course) }
-            }.awaitAll()
-
-            _courses.value = coursesList
-
-            originalCourses.clear()
-            originalCourses.addAll(coursesList)
+                println(">>> _courses updated")
+            } catch (e: SocketTimeoutException) {
+                println(">>> Timeout while loading courses: ${e.message}")
+            } catch (e: Exception) {
+                println(">>> Other error: ${e.message}")
+            }
         }
     }
 

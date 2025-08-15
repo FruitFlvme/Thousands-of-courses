@@ -29,7 +29,6 @@ object DebugMockNetworkModule {
     @Provides
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
-        // Используем фиксированный URL, совпадающий с запущенным сервером
         val baseUrl = "http://localhost:8080/"
 
         return Retrofit.Builder()
