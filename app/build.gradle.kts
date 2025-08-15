@@ -43,39 +43,43 @@ android {
 
 dependencies {
 
+    implementation(project(":data"))
+    implementation(project(":domain"))
+    implementation(project(":navigation"))
+
+    //App
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
-
     implementation(libs.androidx.activity.ktx)
 
-    implementation(libs.androidx.core.ktx)
+    //Material
+    implementation(libs.material)
+
+    //Fonts
+    implementation(libs.androidx.ui.text.google.fonts)
+
+    //Compose
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.foundation)
-    implementation(libs.androidx.ui.text.google.fonts)
-
-
+    
+    //Hilt
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
     implementation(libs.hilt.navigation.compose)
 
-    // Room
+    //Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
-    
-    // Retrofit
+
+    //Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
 
-    // OkHttp и логгирование
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging.interceptor)
-
-
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":navigation"))
+    //OkHttp
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3.logging.interceptor)
+    implementation(libs.okhttp3.mockwebserver)
 }

@@ -28,11 +28,14 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":domain"))
     implementation(project(":feature_main"))
-    implementation(libs.androidx.core.ktx)
+
+    //Compose
     implementation(libs.androidx.compose.ui)
     implementation(libs.androidx.compose.material3)
     implementation(libs.androidx.compose.foundation)
+    implementation(libs.ui.tooling.preview)
 
+    //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

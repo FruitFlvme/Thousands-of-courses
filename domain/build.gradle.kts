@@ -23,6 +23,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
 
+    //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)

@@ -25,24 +25,21 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
 
-    // Room
+    //Room
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
 
-    // Hilt
+    //Hilt
     implementation(libs.hilt.navigation.compose)
     implementation(libs.hilt.android)
     ksp(libs.hilt.compiler)
 
-    // Retrofit
+    //Retrofit
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.gson)
 
-    // OkHttp и логгирование
-    implementation(libs.okhttp)
-    implementation(libs.okhttp.logging.interceptor)
-
-    // Coroutine converter
-    implementation(libs.retrofit2.kotlin.coroutines.adapter)
+    //OkHttp
+    implementation(libs.okhttp3)
+    implementation(libs.okhttp3.logging.interceptor)
 }
